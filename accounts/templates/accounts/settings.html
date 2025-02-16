@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} - Settings{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-24 pb-12">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <!-- Settings Header -->
+            <div class="px-8 py-6 border-b border-gray-200">
+                <h1 class="text-2xl font-bold text-gray-900">Account Settings</h1>
+            </div>
+
+            <!-- Settings Tabs -->
+            <div class="border-b border-gray-200">
+                <nav class="flex px-2 -mb-px">
+                    <button class="px-6 py-4 border-b-2 border-primary text-primary font-medium">
+                        Profile Settings
+                    </button>
+                    <button class="px-6 py-4 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-all duration-300">
+                        Security
+                    </button>
+                    <button class="px-6 py-4 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-all duration-300">
+                        Notifications
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Settings Form -->
+            <form class="p-8 space-y-8">
+                <div class="space-y-8">
+                    <!-- Personal Information Section -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Personal Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    First Name
+                                    <span class="text-primary ml-1">*</span>
+                                </label>
+                                <input type="text" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Last Name
+                                    <span class="text-primary ml-1">*</span>
+                                </label>
+                                <input type="text" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Email Address
+                                    <span class="text-primary ml-1">*</span>
+                                </label>
+                                <input type="email" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Phone Number
+                                </label>
+                                <input type="tel" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Information Section -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Company Information</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Company Name
+                                </label>
+                                <input type="text" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                    Location
+                                </label>
+                                <input type="text" 
+                                       class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                              shadow-sm ring-1 ring-inset ring-gray-300 
+                                              placeholder:text-gray-400
+                                              focus:ring-2 focus:ring-primary 
+                                              transition-all duration-300
+                                              hover:bg-gray-100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio Section -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-6">Bio</h3>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">
+                                About You
+                            </label>
+                            <textarea rows="4" 
+                                      class="mt-1 block w-full px-4 py-3 bg-gray-50 border-0 rounded-xl text-gray-900 
+                                             shadow-sm ring-1 ring-inset ring-gray-300 
+                                             placeholder:text-gray-400
+                                             focus:ring-2 focus:ring-primary 
+                                             transition-all duration-300
+                                             hover:bg-gray-100
+                                             resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Image Section -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Profile Image</h3>
+                    <div class="flex items-center space-x-6">
+                        <div class="relative">
+                            <img class="h-24 w-24 rounded-xl object-cover border-2 border-gray-200" 
+                                src="{% if user.profile.profile_image %}{{ user.profile.profile_image.url }}{% else %}{% static 'images/default-profile.png' %}{% endif %}" 
+                                alt="{{ user.username }}"
+                                id="preview-image">
+                            
+                            <label for="profile_image" class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full cursor-pointer hover:bg-primary-600 transition-all duration-300">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </label>
+                            <input type="file" 
+                                id="profile_image" 
+                                name="profile_image" 
+                                accept="image/*"
+                                class="hidden"
+                                onchange="previewImage(this)">
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-500">Upload a new profile picture. Recommended size: 400x400px</p>
+                            <p class="text-sm text-gray-500 mt-1">Supported formats: JPG, PNG, GIF</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Form Actions -->
+                <div class="flex justify-end space-x-4 pt-4">
+                    <button type="button" 
+                            class="px-6 py-3 border border-gray-300 rounded-xl text-gray-700 
+                                   hover:bg-gray-50 transition-all duration-300">
+                        Cancel
+                    </button>
+                    <button type="submit" 
+                            class="px-6 py-3 bg-primary text-white rounded-xl 
+                                   hover:bg-primary-600 transition-all duration-300">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                document.getElementById('preview-image').src = e.target.result;
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
+    
+{% endblock %}

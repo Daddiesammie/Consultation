@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block title %} - {{ project.title }}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary text-white py-32">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-800 to-primary-600"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div data-aos="fade-up">
+            <h1 class="text-5xl font-bold mb-6">{{ project.title }}</h1>
+            <div class="flex items-center space-x-4">
+                <span class="bg-white/20 px-4 py-2 rounded-full">{{ project.category }}</span>
+                <span>Client: {{ project.client }}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Content -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Project Media -->
+            <div class="space-y-8" data-aos="fade-right">
+                <!-- Main Image with Lightbox -->
+                <div class="relative group cursor-pointer">
+                    <img src="{{ project.image.url }}" 
+                         alt="{{ project.title }}" 
+                         class="w-full rounded-2xl shadow-xl">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                {% if project.video_url %}
+                <div class="aspect-w-16 aspect-h-9" style="height: 400px;">
+                    <iframe 
+                        width="100%" 
+                        height="100%"
+                        src="https://www.youtube.com/embed/mZawG_qhw50"
+                        title="{{ project.title }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        class="w-full rounded-lg shadow-lg">
+                    </iframe>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Project Details -->
+            <div class="space-y-12" data-aos="fade-left">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
+                    <p class="text-gray-600 leading-relaxed">{{ project.description }}</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                            </svg>
+                            <h3 class="font-semibold text-gray-900">Client</h3>
+                        </div>
+                        <p class="text-gray-600">{{ project.client }}</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            <h3 class="font-semibold text-gray-900">Completion Date</h3>
+                        </div>
+                        <p class="text-gray-600">{{ project.completion_date|date:"F j, Y" }}</p>
+                    </div>
+                </div>
+
+                <!-- Project Stats -->
+                <div class="grid grid-cols-3 gap-6">
+                    {% for stat in project.stats %}
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2">{{ stat.value }}</div>
+                        <div class="text-gray-600">{{ stat.label }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Projects -->
+<section class="bg-gray-50 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">Related Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for related in related_projects %}
+            <div class="group" data-aos="fade-up" data-aos-delay="{{ forloop.counter|multiply:100 }}">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative">
+                        <img src="{{ related.image.url }}" 
+                             alt="{{ related.title }}" 
+                             class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                            {{ related.title }}
+                        </h3>
+                        <p class="text-gray-600 mb-4">{{ related.description|truncatewords:20 }}</p>
+                        <a href="{% url 'core:portfolio_detail' related.pk %}" 
+                           class="inline-flex items-center text-primary font-medium group-hover:text-primary-600">
+                            View Project
+                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-8" data-aos="fade-up">Ready to Start Your Project?</h2>
+        <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Let's create something amazing together
+        </p>
+        <a href="{% url 'core:contact' %}" 
+           class="inline-flex items-center px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary-600 transition-colors"
+           data-aos="fade-up" data-aos-delay="200">
+            Start a Conversation
+            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Consultation Request</title>
+</head>
+<body>
+    <h2>New Consultation Request Received</h2>
+    
+    <h3>Client Details:</h3>
+    <ul>
+        <li>Name: {{ user.get_full_name|default:user.username }}</li>
+        <li>Email: {{ user.email }}</li>
+    </ul>
+    
+    <h3>Consultation Details:</h3>
+    <ul>
+        <li>Service: {{ consultation.service.title }}</li>
+        <li>Date: {{ consultation.preferred_date|date:"F j, Y" }}</li>
+        <li>Time: {{ consultation.preferred_time|time:"g:i A" }}</li>
+        <li>Description: {{ consultation.description }}</li>
+    </ul>
+    
+    <p>Please review and respond to this request through the admin panel.</p>
+</body>
+</html>
