@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_settings.meta_title }}</title>
+    <meta name="description" content="{{ site_settings.meta_description }}">
+    <meta name="keywords" content="{{ site_settings.meta_keywords }}">
+    <link rel="shortcut icon" href="{{ site_settings.favicon.url }}">
+    <title>D&D Consulting {% block title %}{% endblock title %}</title>
+    
+    <!-- Tailwind and Custom Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    {% if site_settings.google_analytics_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site_settings.google_analytics_id }}"></script>
+    {% endif %}
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f6ff',
+                            100: '#e0eeff',
+                            200: '#baddff',
+                            300: '#84c5ff',
+                            400: '#48a6ff',
+                            500: '#1a85ff',
+                            600: '#0062ff',
+                            700: '#004ee6',
+                            800: '#003db3',
+                            900: '#003380',
+                        },
+                        secondary: {
+                            50: '#f5f7fa',
+                            100: '#ebeef3',
+                            200: '#d2dae7',
+                            300: '#a9bbd1',
+                            400: '#7694b8',
+                            500: '#5276a0',
+                            600: '#405f87',
+                            700: '#364d6d',
+                            800: '#2f425b',
+                            900: '#2b394d',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade in animation for page content */
+        .page-transition {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Alert animations */
+        .alert-slide {
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-50 font-sans">
+    {% include 'components/navbar.html' %}
+    
+    <main class="flex-grow page-transition">
+        {% if messages %}
+            <div class="fixed top-0 left-0 right-0 z-50">
+                {% for message in messages %}
+                    <div class="alert-slide bg-primary-50 border-l-4 border-primary-600 text-primary-900 p-4 shadow-lg mx-auto max-w-4xl my-2" role="alert">
+                        <div class="flex items-center">
+                            <div class="py-1">
+                                <svg class="w-6 h-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <p class="font-medium">{{ message }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    {% include 'components/footer.html' %}
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Auto-dismiss alerts
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('[role="alert"]');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.style.animation = 'slideUp 0.5s ease-in-out forwards';
+                    setTimeout(() => alert.remove(), 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>
