@@ -84,6 +84,22 @@
 </head>
 
 <body class="flex flex-col min-h-screen bg-gray-50 font-sans">
+
+    <div id="preloader" class="fixed inset-0 z-50 bg-white flex items-center justify-center transition-opacity duration-500">
+        <div class="relative">
+            <!-- Logo Animation -->
+            <div class="flex items-center justify-center">
+                <img src="{{ site_settings.logo.url }}" 
+                     alt="D&D Consulting" 
+                     class="w-48 animate-logo-reveal">
+            </div>
+            <!-- Animated Line -->
+            <div class="w-full h-0.5 bg-gray-100 mt-4 relative overflow-hidden">
+                <div class="absolute inset-0 bg-primary-600 animate-line-fill"></div>
+            </div>
+        </div>
+    </div>
+
     {% include 'components/navbar.html' %}
     
     <main class="flex-grow page-transition">
@@ -108,6 +124,45 @@
         {% endblock content %}
     </main>
 
+    <style>
+        .animate-logo-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: logoReveal 0.8s ease-out forwards;
+        }
+    
+        @keyframes logoReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .animate-line-fill {
+            animation: lineFill 1.5s ease-in-out forwards;
+        }
+    
+        @keyframes lineFill {
+            0% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    
+        body.loading {
+            overflow: hidden;
+        }
+    </style>
+
     {% include 'components/footer.html' %}
 
     <!-- AOS Animation Library -->
@@ -129,6 +184,21 @@
                 }, 5000);
             });
         });
+
+
+
+        document.body.classList.add('loading');
+    
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            document.body.classList.remove('loading');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 1500);
+    });
     </script>
 </body>
 </html>

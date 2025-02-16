@@ -6,11 +6,18 @@
 <!-- Hero Section with Video Background -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <video autoplay loop muted class="object-cover w-full h-full">
+        <video 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            preload="auto"
+            class="object-cover w-full h-full">
             <source src="{{ site_settings.hero_video.url }}" type="video/mp4">
         </video>
         <div class="absolute inset-0 bg-primary-900/70"></div>
     </div>
+    
     
     <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-down">
