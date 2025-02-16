@@ -78,7 +78,19 @@ def dashboard(request):
 
 @login_required
 def profile(request):
-    return render(request, 'accounts/profile.html')
+    if request.method == 'POST':
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if profile_form.is_valid():
+            profile_form.save()
+            messages.success(request, 'Your profile has been updated successfully!')
+            return redirect('accounts:profile')
+    else:
+        profile_form = ProfileUpdateForm(instance=request.user.profile)
+    
+    context = {
+        'profile_form': profile_form,
+    }
+    return render(request, 'accounts/profile.html', context)
 
 @login_required
 def settings(request):
