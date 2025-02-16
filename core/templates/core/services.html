@@ -58,34 +58,75 @@
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-6">Our Process</h2>
+            <h2 class="text-4xl font-bold mb-6">Our Consulting Process</h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                A systematic approach to delivering exceptional results
+                A proven methodology that delivers measurable results for your business
             </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {% for step in process_steps %}
-            <div class="relative" data-aos="fade-up" data-aos-delay="{{ forloop.counter|multiply:100 }}">
+            <!-- Discovery Phase -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="100">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
-                        {{ forloop.counter }}
+                        1
                     </div>
-                    <h3 class="text-xl font-bold mb-3">{{ step.title }}</h3>
-                    <p class="text-gray-600">{{ step.description }}</p>
+                    <h3 class="text-xl font-bold mb-3">Discovery</h3>
+                    <p class="text-gray-600">In-depth analysis of your business needs, challenges, and objectives through comprehensive consultation sessions.</p>
                 </div>
-                {% if not forloop.last %}
                 <div class="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
                     <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
                     </svg>
                 </div>
-                {% endif %}
             </div>
-            {% endfor %}
+
+            <!-- Strategy Development -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Strategy</h3>
+                    <p class="text-gray-600">Creating a tailored action plan with clear milestones, timelines, and deliverables based on our findings.</p>
+                </div>
+                <div class="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Implementation -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Implementation</h3>
+                    <p class="text-gray-600">Executing the strategy with our expert team while providing regular updates and adjustments as needed.</p>
+                </div>
+                <div class="hidden md:block absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2">
+                    <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Review & Optimization -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Optimization</h3>
+                    <p class="text-gray-600">Measuring results, gathering feedback, and fine-tuning strategies to ensure long-term success.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 <!-- Testimonials Section -->
 <section class="py-20">

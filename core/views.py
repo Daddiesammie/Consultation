@@ -55,8 +55,10 @@ def about(request):
 
 def services(request):
     services = Service.objects.all()
+    testimonials = Testimonial.objects.all()[:3]
     context = {
         'services': services,
+        'testimonials': testimonials,
     }
     return render(request, 'core/services.html', context)
 
