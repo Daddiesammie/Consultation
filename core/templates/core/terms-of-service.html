@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} - Terms of Service{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary-900 py-20">
+    <div class="absolute inset-0 opacity-10">
+        <img src="{% static 'images/pattern.svg' %}" class="w-full h-full object-cover" alt="Pattern">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white text-center" data-aos="fade-up">Terms of Service</h1>
+        <p class="mt-4 text-xl text-primary-200 text-center" data-aos="fade-up" data-aos-delay="100">
+            Effective Date: {% now "F j, Y" %}
+        </p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-16">
+            <!-- Company Overview -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-building text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Company Overview</h2>
+                        <p class="text-gray-600 mt-2">Dan and Dave Consulting Limited (RC 1036853)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Agreement -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-handshake text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Service Agreement</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 ml-18">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <i class="fas fa-users text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-3">Management Training</h3>
+                        <p class="text-gray-700">Comprehensive capacity building programs</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <i class="fas fa-chart-line text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-3">Financial Advisory</h3>
+                        <p class="text-gray-700">Expert financial consulting services</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <i class="fas fa-file-contract text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-3">Contract Services</h3>
+                        <p class="text-gray-700">Specialized contract management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Obligations -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-check text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Client Obligations</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 ml-18">
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-info-circle text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Information Accuracy</h3>
+                        <p class="text-gray-700">Provide accurate and complete information</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-comments text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Professional Communication</h3>
+                        <p class="text-gray-700">Maintain clear and timely communication</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-credit-card text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Financial Commitments</h3>
+                        <p class="text-gray-700">Honor agreed payment terms and schedules</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-copyright text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Intellectual Property</h3>
+                        <p class="text-gray-700">Respect all intellectual property rights</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Delivery -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-tasks text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Service Delivery</h2>
+                    </div>
+                </div>
+                <div class="prose prose-lg text-gray-700 ml-18">
+                    <p>We are committed to delivering high-quality services that meet professional standards and client expectations. Our service delivery framework ensures:</p>
+                    <ul class="list-disc pl-6 space-y-2 mt-4">
+                        <li>Timely project completion</li>
+                        <li>Regular progress updates</li>
+                        <li>Quality assurance measures</li>
+                        <li>Professional expertise</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Need Clarification?</h2>
+        <p class="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="100">
+            Our team is ready to answer any questions about our terms of service
+        </p>
+        <a href="{% url 'core:contact' %}" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            Contact Us
+        </a>
+    </div>
+</section>
+{% endblock %}

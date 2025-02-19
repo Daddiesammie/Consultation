@@ -142,14 +142,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Email Configuration
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@gmail.com'
-EMAIL_HOST_USER_PASSWORD = 'your-app-password'
-DEFAULT_FROM_EMAIL = 'D&D Consulting <noreply@danddconsulting.com>'
-# Email settings
-ADMIN_EMAIL = 'admin@danddconsulting.com'  # Change this to your admin email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.dananddaveconsultinglimited.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'support@dananddaveconsultinglimited.com'
+EMAIL_HOST_PASSWORD = 'J{z_}JoBe4.$'
+DEFAULT_FROM_EMAIL = 'Dan & Dave Consulting Limited <support@dananddaveconsultinglimited.com>'
+
+ADMIN_EMAIL = 'support@dananddaveconsultinglimited.com'  # Change this to your admin email
 
 

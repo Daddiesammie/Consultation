@@ -7,6 +7,7 @@ class SiteSettings(models.Model):
     tagline = models.CharField(max_length=200, blank=True)
     logo = models.ImageField(upload_to='site/logo/')
     favicon = models.ImageField(upload_to='site/favicon/')
+    preloader = models.ImageField(upload_to='site/preloader/', blank=True, help_text="Upload preloader image")
     
     # Hero Section
     hero_video = models.FileField(upload_to='site/hero/', blank=True)
@@ -22,6 +23,7 @@ class SiteSettings(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     address = models.TextField()
+    phone2 = models.CharField(max_length=20, blank=True, help_text="Secondary phone number")
     google_map_embed = models.TextField(blank=True)
     
     # Social Media Links

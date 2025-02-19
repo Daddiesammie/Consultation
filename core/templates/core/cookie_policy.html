@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} - Cookie Policy{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary-900 py-20">
+    <div class="absolute inset-0 opacity-10">
+        <img src="{% static 'images/pattern.svg' %}" class="w-full h-full object-cover" alt="Pattern">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white text-center" data-aos="fade-up">Cookie Policy</h1>
+        <p class="mt-4 text-xl text-primary-200 text-center" data-aos="fade-up" data-aos-delay="100">
+            Last Updated: {% now "F j, Y" %}
+        </p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-16">
+            <!-- Introduction -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-cookie-bite text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">About Our Cookies</h2>
+                        <p class="text-gray-700 mt-4">
+                            Dan and Dave Consulting uses cookies to enhance your experience on our website. This policy explains how we use cookies and similar technologies to improve our services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Types of Cookies -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-list-alt text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Types of Cookies We Use</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 ml-18">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Essential Cookies</h3>
+                        <p class="text-gray-700">Required for basic website functionality and security</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Performance Cookies</h3>
+                        <p class="text-gray-700">Help us understand how visitors interact with our website</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Functionality Cookies</h3>
+                        <p class="text-gray-700">Remember your preferences and personalization settings</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Analytics Cookies</h3>
+                        <p class="text-gray-700">Collect data to help us improve our website and services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cookie Management -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-sliders-h text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Managing Your Cookie Preferences</h2>
+                    </div>
+                </div>
+                <div class="prose prose-lg text-gray-700 ml-18">
+                    <p>You can manage your cookie preferences by:</p>
+                    <ul class="list-disc pl-6 space-y-2 mt-4">
+                        <li>Adjusting your browser settings</li>
+                        <li>Using our cookie consent manager</li>
+                        <li>Opting out of specific cookie categories</li>
+                        <li>Contacting our support team for assistance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Third-Party Cookies -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-share-alt text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Third-Party Cookies</h2>
+                        <p class="text-gray-700 mt-4">
+                            We work with trusted partners who may also place cookies on your device. These partners help us:
+                        </p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-700">
+                            <li>Analyze website performance</li>
+                            <li>Provide marketing services</li>
+                            <li>Enhance user experience</li>
+                            <li>Maintain security measures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg transform translate-y-full transition-transform duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0 md:mr-8">
+                <p class="text-gray-700">
+                    We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                </p>
+            </div>
+            <div class="flex space-x-4">
+                <button onclick="acceptCookies()" class="px-6 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition duration-300">
+                    Accept All
+                </button>
+                <button onclick="showPreferences()" class="px-6 py-2 border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition duration-300">
+                    Preferences
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function acceptCookies() {
+    document.getElementById('cookie-consent').style.transform = 'translateY(100%)';
+    localStorage.setItem('cookieConsent', 'accepted');
+}
+
+function showPreferences() {
+    // Implement cookie preferences modal
+}
+
+// Show banner if consent not given
+if (!localStorage.getItem('cookieConsent')) {
+    setTimeout(() => {
+        document.getElementById('cookie-consent').style.transform = 'translateY(0)';
+    }, 1000);
+}
+</script>
+{% endblock %}

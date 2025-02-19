@@ -1,6 +1,42 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Post, Category
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from .models import NewsletterSubscriber
+
+@require_POST
+def subscribe_newsletter(request):
+    email = request.POST.get('email')
+    category_ids = request.POST.getlist('categories')
+    
+    if email:
+        try:
+            subscriber, created = NewsletterSubscriber.objects.get_or_create(
+                email=email,
+                defaults={'is_active': True}
+            )
+            
+            if category_ids:
+                subscriber.categories.set(category_ids)
+            
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Thank you for subscribing to our newsletter!'
+            })
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'An error occurred. Please try again.'
+            })
+    
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Email is required'
+    })
+
+
+
 
 def post_list(request):
     posts = Post.objects.all()

@@ -2,6 +2,7 @@
 {% load custom_filters %}
 {% block title %} - About Us{% endblock %}
 {% load static %}
+
 {% block content %}
 <!-- Hero Section with Parallax -->
 <section class="relative h-[60vh] overflow-hidden">
@@ -10,9 +11,9 @@
     </div>
     <div class="relative h-full flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">About D&D Consulting</h1>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">About Dan and Dave Consulting</h1>
             <p class="text-2xl text-primary-100" data-aos="fade-up" data-aos-delay="200">
-                Transforming businesses through strategic excellence since 1998
+                A wholly owned Nigerian company transforming businesses since 2012
             </p>
         </div>
     </div>
@@ -24,45 +25,70 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div class="bg-white p-8 rounded-2xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="fade-right">
                 <div class="text-primary-600 mb-4">
-                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                    </svg>
+                    <i class="fas fa-eye text-4xl"></i>
                 </div>
                 <h2 class="text-3xl font-bold mb-4">Our Vision</h2>
                 <p class="text-gray-600">
-                    To be the global leader in transformative business consulting, driving innovation and sustainable growth for our clients.
+                    To become a reference point globally.
                 </p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-lg transform hover:-translate-y-2 transition duration-300" data-aos="fade-left">
                 <div class="text-primary-600 mb-4">
-                    <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
+                    <i class="fas fa-bullseye text-4xl"></i>
                 </div>
                 <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
                 <p class="text-gray-600">
-                    To empower organizations with innovative solutions and strategic guidance, enabling them to achieve sustainable success in an ever-evolving business landscape.
+                    To uniquely surpass the expectation of our clients through exceptional service without compromising quality.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Story Timeline Section -->
+<!-- Core Values Section -->
+<section class="py-20 bg-primary-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Core Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up">
+                <div class="text-primary-300 mb-4">
+                    <i class="fas fa-hand-holding-heart text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Diligence</h3>
+                <p class="text-primary-100">Ensuring attentive care and persistent application of steady effort in all our dealings.</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-primary-300 mb-4">
+                    <i class="fas fa-balance-scale text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Accountability</h3>
+                <p class="text-primary-100">Maintaining responsibility to our clients with strict moral and ethical conduct.</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-primary-300 mb-4">
+                    <i class="fas fa-crown text-4xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Nobility</h3>
+                <p class="text-primary-100">Demonstrating high moral character, impeccable courage and honor in service delivery.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Journey</h2>
         <div class="relative">
-            <!-- Timeline Line -->
             <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary-200"></div>
             
-            <!-- Timeline Items -->
             <div class="space-y-12">
                 <div class="flex items-center justify-between" data-aos="fade-up">
                     <div class="w-5/12 text-right pr-8">
-                        <h3 class="text-2xl font-bold mb-2">1998</h3>
-                        <p class="text-gray-600">Founded in New York City</p>
+                        <h3 class="text-2xl font-bold mb-2">2012</h3>
+                        <p class="text-gray-600">Incorporated with Corporate Affairs Commission (RC 1036853)</p>
                     </div>
                     <div class="relative">
                         <div class="w-4 h-4 bg-primary-600 rounded-full"></div>
@@ -76,32 +102,12 @@
                         <div class="w-4 h-4 bg-primary-600 rounded-full"></div>
                     </div>
                     <div class="w-5/12 pl-8">
-                        <h3 class="text-2xl font-bold mb-2">2005</h3>
-                        <p class="text-gray-600">Expanded to International Markets</p>
+                        <h3 class="text-2xl font-bold mb-2">2013</h3>
+                        <p class="text-gray-600">Commenced Full Business Operations</p>
                     </div>
                 </div>
                 
-                <div class="flex items-center justify-between" data-aos="fade-up">
-                    <div class="w-5/12 text-right pr-8">
-                        <h3 class="text-2xl font-bold mb-2">2012</h3>
-                        <p class="text-gray-600">Launched Digital Transformation Division</p>
-                    </div>
-                    <div class="relative">
-                        <div class="w-4 h-4 bg-primary-600 rounded-full"></div>
-                    </div>
-                    <div class="w-5/12"></div>
-                </div>
-                
-                <div class="flex items-center justify-between" data-aos="fade-up">
-                    <div class="w-5/12"></div>
-                    <div class="relative">
-                        <div class="w-4 h-4 bg-primary-600 rounded-full"></div>
-                    </div>
-                    <div class="w-5/12 pl-8">
-                        <h3 class="text-2xl font-bold mb-2">2024</h3>
-                        <p class="text-gray-600">Leading Global Consulting Firm</p>
-                    </div>
-                </div>
+                <!-- Add more timeline items based on company milestones -->
             </div>
         </div>
     </div>
@@ -144,103 +150,6 @@
     </div>
 </section>
 
-<!-- Values Section -->
-<section class="py-20 bg-primary-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Core Values</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up">
-                <div class="text-primary-300 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Excellence</h3>
-                <p class="text-primary-100">Delivering exceptional results through dedication and expertise.</p>
-            </div>
-            
-            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up" data-aos-delay="100">
-                <div class="text-primary-300 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Innovation</h3>
-                <p class="text-primary-100">Pioneering creative solutions for tomorrow's challenges.</p>
-            </div>
-            
-            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up" data-aos-delay="200">
-                <div class="text-primary-300 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Integrity</h3>
-                <p class="text-primary-100">Maintaining the highest ethical standards in all our dealings.</p>
-            </div>
-            
-            <div class="text-center p-6 rounded-xl bg-white/10 backdrop-blur-lg" data-aos="fade-up" data-aos-delay="300">
-                <div class="text-primary-300 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Collaboration</h3>
-                <p class="text-primary-100">Building strong partnerships for mutual success.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Global Presence Section -->
-<section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Global Presence</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="relative h-[400px]" data-aos="fade-right">
-                <!-- Add your map implementation here -->
-                <div id="global-map" class="absolute inset-0 rounded-xl shadow-lg"></div>
-            </div>
-            <div class="space-y-6" data-aos="fade-left">
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">15+ Global Offices</h3>
-                        <p class="text-gray-600">Strategic presence across major business hubs worldwide.</p>
-                    </div>
-                </div>
-                
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">500+ Global Clients</h3>
-                        <p class="text-gray-600">Trusted by leading organizations across industries.</p>
-                    </div>
-                </div>
-                
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-                        <p class="text-gray-600">Round-the-clock assistance for our global clientele.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Awards Section -->
 <section class="awards-section py-20">

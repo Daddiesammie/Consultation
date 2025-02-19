@@ -5,16 +5,16 @@ from .models import SiteSettings
 class SiteSettingsAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Site Identity', {
-            'fields': ('site_name', 'tagline', 'logo', 'favicon')
+            'fields': ('site_name', 'tagline', 'logo', 'favicon', 'preloader')
         }),
         ('Hero Section', {
             'fields': ('hero_video', 'hero_title', 'hero_subtitle')
         }),
         ('About Section', {
-            'fields': ('about_image', 'about_title', 'about_content',)  # Note the comma to make it a tuple
+            'fields': ('about_image', 'about_title', 'about_content',)
         }),
         ('Contact Information', {
-            'fields': ('email', 'phone', 'address', 'google_map_embed')
+            'fields': ('email', 'phone', 'phone2', 'address', 'google_map_embed')
         }),
         ('Social Media', {
             'fields': ('facebook', 'twitter', 'instagram', 'linkedin', 'youtube')

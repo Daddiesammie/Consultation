@@ -6,18 +6,18 @@
 <!-- Hero Section with Video Background -->
 <section class="relative h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <video 
-            autoplay 
-            loop 
-            muted 
-            playsinline 
-            preload="auto"
-            class="object-cover w-full h-full">
-            <source src="{{ site_settings.hero_video.url }}" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-primary-900/70"></div>
-    </div>
-    
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        preload="auto"
+        class="object-cover w-full h-full">
+        <source src="{{ site_settings.hero_video.url }}" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-primary-900/70"></div>
+</div>
+
     
     <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         <h1 class="text-5xl md:text-7xl font-bold mb-6" data-aos="fade-down">
@@ -30,7 +30,7 @@
             <a href="{% url 'core:contact' %}" class="bg-white text-primary-800 px-8 py-4 rounded-full font-semibold hover:bg-primary-100 transition duration-300 transform hover:scale-105">
                 Get Started
             </a>
-            <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition duration-300">
+            <a href="{% url 'core:services' %}" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition duration-300">
                 Learn More
             </a>
         </div>
@@ -170,6 +170,66 @@
     </div>
 </section>
 
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h1>
+
+        <div class="space-y-6">
+            <!-- Services -->
+            <div class="bg-white rounded-lg shadow-md">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">What services does Dan and Dave Consulting offer?</h3>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="hidden px-6 pb-4">
+                    <p>We offer three main service categories:</p>
+                    <ul class="list-disc pl-6 mt-2">
+                        <li>Management Training & Capacity Building</li>
+                        <li>Financial Advisory Services</li>
+                        <li>Specialized Contract Services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Training Programs -->
+            <div class="bg-white rounded-lg shadow-md">
+                <button class="w-full px-6 py-4 text-left focus:outline-none" onclick="toggleFAQ(this)">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold">What types of training programs do you offer?</h3>
+                        <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </button>
+                <div class="hidden px-6 pb-4">
+                    <p>Our training programs include:</p>
+                    <ul class="list-disc pl-6 mt-2">
+                        <li>Management and Leadership Development</li>
+                        <li>Banking and Financial Sector Training</li>
+                        <li>Public and Private Sector Development</li>
+                        <li>Customized Corporate Training Solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Add more FAQ items -->
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleFAQ(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('svg');
+    
+    content.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+}
+</script>
 <!-- CTA Section -->
 <section class="py-20 bg-primary-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -189,6 +249,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- Required Scripts -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">

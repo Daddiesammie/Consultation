@@ -1,34 +1,54 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% load custom_filters %}
 {% block title %} - Blog{% endblock %}
 
 {% block content %}
-<!-- Blog Header -->
-<section class="bg-primary text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl font-bold text-center">Our Blog</h1>
-        <p class="text-center mt-4">Insights, News, and Expert Analysis</p>
+<!-- Hero Section -->
+<section class="relative bg-primary-900 py-24">
+    <div class="absolute inset-0 opacity-10">
+        <img src="{% static 'images/pattern.jpg' %}" class="w-full h-full object-cover" alt="Pattern">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Insights & Expertise</h1>
+        <p class="text-xl text-primary-200">Expert analysis, industry trends, and professional insights</p>
     </div>
 </section>
 
 <!-- Featured Posts -->
 {% if featured_posts %}
-<section class="py-12 bg-gray-50">
+<section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-8">Featured Posts</h2>
+        <h2 class="text-3xl font-bold mb-12 text-primary-900" data-aos="fade-up">Featured Articles</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {% for post in featured_posts %}
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <a href="{{ post.get_absolute_url }}" class="hover:text-primary">{{ post.title }}</a>
-                    </h3>
-                    <p class="text-gray-600 mb-4">{{ post.excerpt }}</p>
-                    <div class="flex justify-between items-center text-sm text-gray-500">
-                        <span>{{ post.created_at|date:"M d, Y" }}</span>
-                        <span>{{ post.category.name }}</span>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="{{ forloop.counter|multiply:100 }}">
+                <div class="relative">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-56 object-cover">
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 bg-primary-600 text-white text-sm rounded-full">
+                            {{ post.category.name }}
+                        </span>
                     </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4 text-sm text-gray-500">
+                        <i class="far fa-calendar-alt mr-2"></i>
+                        <span>{{ post.created_at|date:"M d, Y" }}</span>
+                        <span class="mx-2">•</span>
+                        <i class="far fa-clock mr-2"></i>
+                        <span>{{ post.read_time }} min read</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">
+                        <a href="{{ post.get_absolute_url }}" class="text-primary-900 hover:text-primary-600 transition">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                    <p class="text-gray-600 mb-4 line-clamp-2">{{ post.excerpt }}</p>
+                    <a href="{{ post.get_absolute_url }}" class="inline-flex items-center text-primary-600 hover:text-primary-700">
+                        Read More 
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
                 </div>
             </div>
             {% endfor %}
@@ -37,63 +57,149 @@
 </section>
 {% endif %}
 
-<!-- Main Blog Content -->
-<section class="py-12">
+<!-- Main Content -->
+<section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             <!-- Blog Posts -->
             <div class="lg:col-span-3">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {% for post in page_obj %}
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">
-                                <a href="{{ post.get_absolute_url }}" class="hover:text-primary">{{ post.title }}</a>
-                            </h3>
-                            <p class="text-gray-600 mb-4">{{ post.excerpt }}</p>
-                            <div class="flex justify-between items-center text-sm text-gray-500">
-                                <span>{{ post.created_at|date:"M d, Y" }}</span>
-                                <span>{{ post.category.name }}</span>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                        <div class="relative">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 bg-primary-600 text-white text-sm rounded-full">
+                                    {{ post.category.name }}
+                                </span>
                             </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4 text-sm text-gray-500">
+                                <i class="far fa-calendar-alt mr-2"></i>
+                                <span>{{ post.created_at|date:"M d, Y" }}</span>
+                                <span class="mx-2">•</span>
+                                <i class="far fa-clock mr-2"></i>
+                                <span>{{ post.read_time }} min read</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">
+                                <a href="{{ post.get_absolute_url }}" class="text-primary-900 hover:text-primary-600 transition">
+                                    {{ post.title }}
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">{{ post.excerpt }}</p>
+                            <a href="{{ post.get_absolute_url }}" class="inline-flex items-center text-primary-600 hover:text-primary-700">
+                                Read More 
+                                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                            </a>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
-                
+
                 <!-- Pagination -->
                 {% if page_obj.has_other_pages %}
-                <div class="mt-8 flex justify-center">
-                    <div class="flex space-x-2">
+                <div class="mt-12 flex justify-center" data-aos="fade-up">
+                    <div class="inline-flex rounded-md shadow">
                         {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}" class="px-4 py-2 bg-primary text-white rounded">Previous</a>
+                        <a href="?page={{ page_obj.previous_page_number }}" 
+                           class="px-5 py-2 bg-white text-primary-600 rounded-l-md border border-primary-600 hover:bg-primary-50 transition">
+                            <i class="fas fa-chevron-left mr-2"></i> Previous
+                        </a>
                         {% endif %}
                         
                         {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}" class="px-4 py-2 bg-primary text-white rounded">Next</a>
+                        <a href="?page={{ page_obj.next_page_number }}" 
+                           class="px-5 py-2 bg-primary-600 text-white rounded-r-md hover:bg-primary-700 transition">
+                            Next <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
                         {% endif %}
                     </div>
                 </div>
                 {% endif %}
             </div>
-            
+
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold mb-4">Categories</h3>
-                    <ul class="space-y-2">
+                <!-- Categories -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8" data-aos="fade-left">
+                    <h3 class="text-xl font-bold mb-6 text-primary-900">Categories</h3>
+                    <ul class="space-y-3">
                         {% for category in categories %}
                         <li>
                             <a href="{% url 'blog:category_posts' category.slug %}" 
-                               class="text-gray-600 hover:text-primary">
-                                {{ category.name }}
+                               class="flex items-center justify-between text-gray-600 hover:text-primary-600 transition">
+                                <span>{{ category.name }}</span>
+                                <span class="bg-primary-50 text-primary-600 px-2 py-1 rounded-full text-sm">
+                                    {{ category.post_count }}
+                                </span>
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
+
+
+
             </div>
+
+
+            <div class="bg-primary-900 rounded-xl shadow-lg p-6 text-white">
+                <h3 class="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <p class="text-primary-200 mb-6">Get notified about new blog posts</p>
+                <form id="newsletter-form" class="space-y-4">
+                    {% csrf_token %}
+                    <input type="email" name="email" required
+                           class="w-full px-4 py-2 rounded-md bg-primary-800 border border-primary-700 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                           placeholder="Enter your email">
+                    
+                    <div class="space-y-2">
+                        <p class="text-sm text-primary-200">Select categories (optional):</p>
+                        {% for category in categories %}
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="categories" value="{{ category.id }}"
+                                   class="rounded border-primary-700 text-primary-600 focus:ring-primary-500">
+                            <span>{{ category.name }}</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full px-4 py-2 bg-white text-primary-900 rounded-md hover:bg-primary-50 transition">
+                        Subscribe
+                    </button>
+                    <div id="newsletter-message"></div>
+                </form>
+            </div>
+            
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch("{% url 'blog:subscribe_newsletter' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const messageDiv = document.getElementById('newsletter-message');
+            messageDiv.textContent = data.message;
+            messageDiv.className = `mt-2 text-sm ${data.status === 'success' ? 'text-green-500' : 'text-red-500'}`;
+            
+            if (data.status === 'success') {
+                this.reset();
+            }
+        });
+    });
+    </script>
+    
 {% endblock %}

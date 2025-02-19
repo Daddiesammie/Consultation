@@ -80,6 +80,12 @@
             from { transform: translateY(-100%); }
             to { transform: translateY(0); }
         }
+
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
     </style>
 </head>
 
@@ -89,7 +95,7 @@
         <div class="relative">
             <!-- Logo Animation -->
             <div class="flex items-center justify-center">
-                <img src="{{ site_settings.logo.url }}" 
+                <img src="{{ site_settings.preloader.url }}" 
                      alt="D&D Consulting" 
                      class="w-48 animate-logo-reveal">
             </div>
@@ -119,6 +125,22 @@
                 {% endfor %}
             </div>
         {% endif %}
+
+        <!-- WhatsApp Float Button -->
+        <div class="fixed bottom-8 left-8 z-50" data-aos="fade-up">
+            <a href="{{ site_settings.phone }}" 
+            target="_blank"
+            class="flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full shadow-lg hover:bg-primary-700 transition-all duration-300 hover:scale-110">
+                <i class="fab fa-whatsapp text-white text-3xl"></i>
+            </a>
+            <div class="absolute bottom-20 left-0 bg-white rounded-lg shadow-lg p-3 w-48 transform scale-0 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
+                <p class="text-sm text-gray-600">Need help? Chat with us!</p>
+            </div>
+        </div>
+
+
+
+
         
         {% block content %}
         {% endblock content %}
@@ -200,5 +222,48 @@
         }, 1500);
     });
     </script>
+
+    <!-- Cookie Policy Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 transform translate-y-full transition-transform duration-300 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1">
+                <p class="text-gray-700">
+                    We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+                    <a href="{% url 'core:cookie_policy' %}" class="text-primary-600 hover:text-primary-700 underline">Learn more</a>
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="manageCookies()" class="px-4 py-2 text-sm border border-primary-600 text-primary-600 rounded hover:bg-primary-50 transition duration-300">
+                    Manage Preferences
+                </button>
+                <button onclick="acceptCookies()" class="px-4 py-2 text-sm bg-primary-600 text-white rounded hover:bg-primary-700 transition duration-300">
+                    Accept All
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function acceptCookies() {
+    document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+    localStorage.setItem('cookieConsent', 'accepted');
+}
+
+function manageCookies() {
+    window.location.href = "{% url 'core:cookie_policy' %}";
+}
+
+// Show banner if consent not given
+document.addEventListener('DOMContentLoaded', function() {
+    if (!localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+            document.getElementById('cookie-banner').style.transform = 'translateY(0)';
+        }, 1000);
+    }
+});
+</script>
+
 </body>
 </html>

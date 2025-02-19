@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} - Privacy Policy{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary-900 py-20">
+    <div class="absolute inset-0 opacity-10">
+        <img src="{% static 'images/pattern.svg' %}" class="w-full h-full object-cover" alt="Pattern">
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-white text-center" data-aos="fade-up">Privacy Policy</h1>
+        <p class="mt-4 text-xl text-primary-200 text-center" data-aos="fade-up" data-aos-delay="100">
+            Last Updated: {% now "F j, Y" %}
+        </p>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-16">
+            <!-- Introduction -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-primary-900 mb-6">Introduction</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    At Dan and Dave Consulting Limited, we take your privacy seriously. This policy outlines our commitment to protecting your personal information and how we handle data collection, usage, and protection.
+                </p>
+            </div>
+
+            <!-- Information Collection -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-database text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Information We Collect</h2>
+                    </div>
+                </div>
+                <div class="ml-18">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Business contact information and professional details</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Professional credentials and qualifications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Training and consultation preferences</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Financial advisory requirements</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Data Usage -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-cogs text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">How We Use Your Information</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 ml-18">
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Service Delivery</h3>
+                        <p class="text-gray-700">Providing consulting and training services tailored to your needs</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Communication</h3>
+                        <p class="text-gray-700">Maintaining client relationships and service updates</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Quality Improvement</h3>
+                        <p class="text-gray-700">Enhancing our service quality and client experience</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-lg mb-3">Legal Compliance</h3>
+                        <p class="text-gray-700">Meeting regulatory and legal requirements</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Protection -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-primary-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-6">
+                        <h2 class="text-3xl font-bold text-primary-900">Data Protection Measures</h2>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 ml-18">
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-lock text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Secure Encryption</h3>
+                        <p class="text-gray-700">Industry-standard encryption for all data transfers</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-user-shield text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Access Controls</h3>
+                        <p class="text-gray-700">Strict access controls and authentication measures</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-clipboard-check text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Regular Audits</h3>
+                        <p class="text-gray-700">Periodic security audits and compliance checks</p>
+                    </div>
+                    <div class="border border-primary-100 p-6 rounded-xl">
+                        <i class="fas fa-file-contract text-primary-600 text-2xl mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Confidentiality</h3>
+                        <p class="text-gray-700">Strict confidentiality agreements and protocols</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Have Questions About Our Privacy Policy?</h2>
+        <p class="text-gray-700 mb-8" data-aos="fade-up" data-aos-delay="100">
+            Our team is here to help you understand how we protect your data
+        </p>
+        <a href="{% url 'core:contact' %}" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            Contact Us
+        </a>
+    </div>
+</section>
+{% endblock %}

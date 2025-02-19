@@ -106,7 +106,7 @@ def contact(request):
             
             user_email_html = render_to_string('core/emails/user_contact_confirmation.html', user_context)
             send_mail(
-                'Thank you for contacting D&D Consulting',
+                'Thank you for contacting Dan & Dave Consulting Ltd',
                 '',
                 settings.DEFAULT_FROM_EMAIL,
                 [contact.email],
@@ -138,3 +138,14 @@ def portfolio_detail(request, pk):
     }
     return render(request, 'core/portfolio_detail.html', context)
 
+def privacy_policy(request):
+    return render(request, 'core/privacy-policy.html')
+
+def terms_of_service(request):
+    return render(request, 'core/terms-of-service.html')
+
+def faq(request):
+    return render(request, 'core/faq.html')
+
+def cookie_policy(request):
+    return render(request, 'core/cookie_policy.html')
